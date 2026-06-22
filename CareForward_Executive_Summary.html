@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareForward Group — AI Automation Business Case</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;
+  --acc:#3D7ABF;
+  --green:#1E6B47;
+  --green-l:#E6F4EC;
+  --green-b:#9ECFB3;
+  --amber:#8A5A00;
+  --amber-l:#FFF5E0;
+  --red:#9A1C1C;
+  --red-l:#FDEAEA;
+  --purple:#5B2D8E;
+  --purple-l:#F0EBF8;
+  --slate:#5B6B8A;
+  --bg:#F6F4EF;
+  --surface:#FFFFFF;
+  --border:#E0DBD0;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--navy);
+  min-height:100vh;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:24px 16px;
+}
+.page{
+  width:100%;
+  max-width:1040px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 32px rgba(13,27,42,0.10);
+}
+
+/* HEADER */
+.pg-header{
+  background:var(--navy);
+  padding:28px 36px 24px;
+  position:relative;
+  overflow:hidden;
+}
+.pg-header::after{
+  content:'';
+  position:absolute;
+  right:-60px;top:-60px;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:rgba(61,122,191,0.08);
+  pointer-events:none;
+}
+.header-eyebrow{
+  font-size:10px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--acc);margin-bottom:6px;
+}
+.header-title{
+  font-size:26px;font-weight:700;
+  color:#fff;line-height:1.2;
+  margin-bottom:6px;
+}
+.header-sub{
+  font-size:13px;color:rgba(255,255,255,.55);
+  line-height:1.5;max-width:680px;
+}
+.header-meta{
+  display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;
+}
+.meta-chip{
+  font-size:10px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:4px 10px;border-radius:20px;
+  background:rgba(255,255,255,.08);
+  color:rgba(255,255,255,.6);
+  border:1px solid rgba(255,255,255,.12);
+}
+.meta-chip.highlight{
+  background:rgba(61,122,191,.25);
+  color:#A0C4F0;
+  border-color:rgba(61,122,191,.4);
+}
+
+/* STAT BANNER */
+.stat-banner{
+  background:linear-gradient(135deg,#0D1B2A 0%,#1A3A62 100%);
+  padding:20px 36px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border-bottom:3px solid var(--acc);
+}
+@media(max-width:600px){.stat-banner{grid-template-columns:repeat(2,1fr);}}
+.stat-item{
+  text-align:center;
+  padding:8px 12px;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-size:28px;font-weight:700;
+  color:#fff;line-height:1;
+  font-family:var(--mono);
+}
+.stat-num span{font-size:16px;}
+.stat-label{
+  font-size:10px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);
+  margin-top:4px;
+}
+
+/* BODY */
+.body{padding:28px 36px;}
+
+/* SECTION LABEL */
+.slabel{
+  font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--acc);
+  margin:0 0 14px;
+  display:flex;align-items:center;gap:10px;
+}
+.slabel::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* PROBLEM BOX */
+.problem-box{
+  background:var(--red-l);
+  border:1px solid #E8AAAA;
+  border-left:4px solid var(--red);
+  border-radius:6px;
+  padding:14px 18px;
+  margin-bottom:20px;
+  font-size:13px;
+  line-height:1.65;
+  color:var(--navy);
+}
+.problem-box strong{color:var(--red);}
+
+/* OPPORTUNITIES GRID */
+.opp-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:20px;
+}
+@media(max-width:580px){.opp-grid{grid-template-columns:1fr;}}
+.opp-card{
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.opp-head{
+  padding:10px 14px;
+  display:flex;align-items:center;gap:10px;
+}
+.opp-num{
+  width:24px;height:24px;border-radius:50%;
+  font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:#fff;
+}
+.opp-title{font-size:13px;font-weight:700;}
+.opp-body{padding:10px 14px;font-size:12px;line-height:1.6;color:var(--slate);}
+.opp-body strong{color:var(--navy);}
+.opp-metric{
+  font-family:var(--mono);
+  font-size:11px;font-weight:500;
+  margin-top:8px;padding:6px 8px;
+  border-radius:4px;
+  line-height:1.5;
+}
+.opp-research{
+  font-size:11px;font-style:italic;
+  margin-top:6px;padding:5px 8px;
+  border-radius:4px;
+  line-height:1.5;
+}
+
+/* RESEARCH STRIP */
+.research-strip{
+  background:var(--purple-l);
+  border:1px solid #C4A8EC;
+  border-left:4px solid var(--purple);
+  border-radius:6px;
+  padding:14px 18px;
+  margin-bottom:20px;
+}
+.research-title{
+  font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--purple);margin-bottom:10px;
+}
+.research-metrics{
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.r-metric{
+  font-family:var(--mono);
+  font-size:11px;font-weight:600;
+  padding:4px 10px;border-radius:4px;
+  background:rgba(91,45,142,.1);
+  color:var(--purple);
+  border:1px solid rgba(91,45,142,.2);
+}
+.research-note{
+  font-size:12px;color:var(--slate);
+  line-height:1.6;margin-top:8px;
+}
+
+/* ROI ROW */
+.roi-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+@media(max-width:500px){.roi-row{grid-template-columns:1fr;}}
+.roi-card{
+  background:var(--green-l);
+  border:1px solid var(--green-b);
+  border-radius:6px;
+  padding:12px 14px;
+  text-align:center;
+}
+.roi-num{
+  font-size:20px;font-weight:700;
+  color:var(--green);font-family:var(--mono);
+  line-height:1.2;
+}
+.roi-label{
+  font-size:10px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--green);margin-top:4px;
+  opacity:.8;
+}
+.roi-note{font-size:11px;color:var(--slate);margin-top:4px;}
+
+/* ARCHITECTURE */
+.arch-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-bottom:20px;
+}
+@media(max-width:500px){.arch-row{grid-template-columns:1fr;}}
+.arch-card{
+  border-radius:6px;padding:12px 14px;font-size:12px;line-height:1.6;
+}
+.arch-fed{
+  background:var(--green-l);
+  border:1px solid var(--green-b);
+  color:var(--green);
+}
+.arch-cen{
+  background:var(--red-l);
+  border:1px solid #E8AAAA;
+  color:var(--red);
+}
+.arch-label{
+  font-size:10px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.arch-point{
+  font-size:12px;margin-bottom:4px;
+  display:flex;align-items:flex-start;gap:6px;
+}
+.arch-point::before{
+  content:'';
+  flex-shrink:0;
+  margin-top:6px;
+  width:6px;height:6px;
+  border-radius:50%;
+}
+.arch-fed .arch-point::before{background:var(--green);}
+.arch-cen .arch-point::before{background:var(--red);}
+
+/* FOOTER */
+.pg-footer{
+  background:var(--navy);
+  padding:16px 36px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+}
+.footer-author{font-size:12px;color:rgba(255,255,255,.6);line-height:1.5;}
+.footer-author strong{color:#fff;}
+.footer-links{display:flex;gap:8px;flex-wrap:wrap;}
+.footer-link{
+  font-size:10px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:4px 10px;border-radius:3px;
+  background:rgba(61,122,191,.2);
+  color:var(--acc);
+  border:1px solid rgba(61,122,191,.3);
+  text-decoration:none;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="pg-header">
+    <div class="header-eyebrow">AI Automation Business Case</div>
+    <div class="header-title">CareForward Group</div>
+    <div class="header-sub">Identifying, quantifying and prioritising AI automation opportunities across social care operations — grounded in federated machine learning research and lived operational knowledge.</div>
+    <div class="header-meta">
+      <span class="meta-chip">June 2026</span>
+      <span class="meta-chip">Version 1.0</span>
+      <span class="meta-chip">Social Care</span>
+      <span class="meta-chip highlight">Federated AI Architecture</span>
+      <span class="meta-chip highlight">Stephanie Onuoha</span>
+    </div>
+  </div>
+
+  <!-- STAT BANNER -->
+  <div class="stat-banner">
+    <div class="stat-item">
+      <div class="stat-num">72<span>hrs</span></div>
+      <div class="stat-label">Admin lost per week</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80<span>%</span></div>
+      <div class="stat-label">Logging time reduction</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">£160<span>K</span></div>
+      <div class="stat-label">Annual value per home</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0.99</div>
+      <div class="stat-label">Model AUC (research)</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- PROBLEM -->
+    <div class="slabel">The Problem</div>
+    <div class="problem-box">
+      CareForward Group support workers spend <strong>40 to 72 hours per week</strong> on manual administrative logging across a three-shift team. Staff spend 5 to 15 minutes every hour on device logging during a shift, competing directly with care delivery time. The most consistent feedback from operational staff: <strong>"more time logging than with people."</strong> Medication records carry the highest error risk and trigger costly escalation chains when errors occur. Early health deterioration is detected through informal verbal observation, unstructured and lost between shift changes.
+    </div>
+
+    <!-- OPPORTUNITIES -->
+    <div class="slabel">Four AI Opportunities</div>
+    <div class="opp-grid">
+
+      <!-- Opp 1 -->
+      <div class="opp-card">
+        <div class="opp-head" style="background:var(--red-l);">
+          <div class="opp-num" style="background:var(--red);">1</div>
+          <div class="opp-title" style="color:var(--red);">Voice-to-Text Care Logging</div>
+        </div>
+        <div class="opp-body">
+          Staff speak observations naturally. AI transcribes and populates the correct log category automatically. Human review before saving. <strong>No manual typing. No device navigation during care.</strong>
+          <div class="opp-metric" style="background:var(--red-l);color:var(--red);">35-75 min/shift → 7-14 min/shift &nbsp;|&nbsp; £18,720-£46,800/yr saved</div>
+          <div class="opp-research" style="background:var(--purple-l);color:var(--purple);">SHAP stability 0.9934 — every auto-populated field traceable to source speech input. CQC-auditable.</div>
+        </div>
+      </div>
+
+      <!-- Opp 2 -->
+      <div class="opp-card">
+        <div class="opp-head" style="background:var(--red-l);">
+          <div class="opp-num" style="background:var(--red);">2</div>
+          <div class="opp-title" style="color:var(--red);">Medication Error Prevention</div>
+        </div>
+        <div class="opp-body">
+          AI pre-administration cross-check against GP, pharmacist and SALT directives. Real-time MAR completeness flag. Refusal pattern tracking. <strong>Dual-witness human protocol unchanged.</strong>
+          <div class="opp-metric" style="background:var(--red-l);color:var(--red);">60-80% error reduction &nbsp;|&nbsp; ROI greater than 10:1 vs implementation cost</div>
+          <div class="opp-research" style="background:var(--purple-l);color:var(--purple);">LogAE anomaly detection — same mechanism as dissertation DoS detection, 0.95 F1 maintained under 30% feature corruption.</div>
+        </div>
+      </div>
+
+      <!-- Opp 3 -->
+      <div class="opp-card">
+        <div class="opp-head" style="background:var(--amber-l);">
+          <div class="opp-num" style="background:var(--amber);">3</div>
+          <div class="opp-title" style="color:var(--amber);">Early Health Deterioration Detection</div>
+        </div>
+        <div class="opp-body">
+          AI learns each service user's personal baseline across mood, health, activity, fluid and sleep logs. Deviations trigger early advisory alerts to senior staff — before deterioration becomes acute.
+          <div class="opp-metric" style="background:var(--amber-l);color:var(--amber);">40-60% earlier intervention &nbsp;|&nbsp; £5,000-£7,500/month in avoided admissions</div>
+          <div class="opp-research" style="background:var(--purple-l);color:var(--purple);">Direct dissertation application: LogAE 0.95 accuracy, 0.99 AUC. SHAP identifies which features drove each alert.</div>
+        </div>
+      </div>
+
+      <!-- Opp 4 -->
+      <div class="opp-card">
+        <div class="opp-head" style="background:var(--green-l);">
+          <div class="opp-num" style="background:var(--green);">4</div>
+          <div class="opp-title" style="color:var(--green);">AI-Assisted Handover Summaries</div>
+        </div>
+        <div class="opp-body">
+          AI compiles shift logs into a structured handover template at shift end. SHAP surfaces the most significant entries automatically. Staff review and sign off. <strong>Consistent structure every shift.</strong>
+          <div class="opp-metric" style="background:var(--green-l);color:var(--green);">15-30 min → 3-5 min &nbsp;|&nbsp; £6,240-£15,600/yr saved &nbsp;|&nbsp; Best pilot candidate</div>
+          <div class="opp-research" style="background:var(--purple-l);color:var(--purple);">NLP summarisation with SHAP-prioritised content. Lowest risk. Builds staff confidence for Phase 2.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RESEARCH -->
+    <div class="slabel">Research Foundation</div>
+    <div class="research-strip">
+      <div class="research-title">LogAE-XGBoost-SHAP Federated Model — University of Hull MSc Dissertation, August 2025</div>
+      <div class="research-metrics">
+        <span class="r-metric">0.95 Accuracy</span>
+        <span class="r-metric">0.95 F1-Score</span>
+        <span class="r-metric">0.99 AUC</span>
+        <span class="r-metric">SHAP Stability 0.9934</span>
+        <span class="r-metric">0% Low-Confidence Predictions</span>
+        <span class="r-metric">F1 greater than 0.90 under 30% Feature Corruption</span>
+        <span class="r-metric">21,871 Classifications</span>
+      </div>
+      <div class="research-note">Originally applied to DoS attack detection across federated network environments. The anomaly detection mechanism (LogAE: train on normal, flag deviations as high reconstruction error) transfers directly to care log pattern analysis. The federated architecture (data stays local, only model improvements shared) satisfies GDPR special category data obligations without performance compromise.</div>
+    </div>
+
+    <!-- ROI -->
+    <div class="slabel">Return on Investment</div>
+    <div class="roi-row">
+      <div class="roi-card">
+        <div class="roi-num">£40K-£70K</div>
+        <div class="roi-label">Annual Labour Saving</div>
+        <div class="roi-note">Per home, across all four opportunities</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-num">£60K-£90K</div>
+        <div class="roi-label">NHS Cost Avoidance</div>
+        <div class="roi-note">Avoided emergency admissions per home per year</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-num">£100K-£160K</div>
+        <div class="roi-label">Total Annual Value</div>
+        <div class="roi-note">Per home including clinical impact</div>
+      </div>
+    </div>
+
+    <!-- ARCHITECTURE -->
+    <div class="slabel">Why Federated Architecture</div>
+    <div class="arch-row">
+      <div class="arch-card arch-fed">
+        <div class="arch-label">Federated — Recommended</div>
+        <div class="arch-point">Health data processed locally at each care home. Never transmitted.</div>
+        <div class="arch-point">GDPR special category obligations met by design.</div>
+        <div class="arch-point">0.95 accuracy matching centralised performance. Zero privacy trade-off.</div>
+        <div class="arch-point">Drift detection monitors each home independently.</div>
+      </div>
+      <div class="arch-card arch-cen">
+        <div class="arch-label">Centralised — Not Recommended</div>
+        <div class="arch-point">Centralising individual health records increases GDPR breach exposure.</div>
+        <div class="arch-point">Data sharing agreements required across all homes.</div>
+        <div class="arch-point">Marginal accuracy advantage does not justify privacy risk.</div>
+        <div class="arch-point">Single point of failure for sensitive care data.</div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="pg-footer">
+    <div class="footer-author">
+      <strong>Stephanie Onuoha</strong> &nbsp;|&nbsp;
+      BEng Computer Engineering &nbsp;|&nbsp; MSc AI and Data Science, University of Hull &nbsp;|&nbsp;
+      Business Analyst and UAT Tester &nbsp;|&nbsp; June 2026
+    </div>
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.linkedin.com/in/stephanie-onuoha" target="_blank">LinkedIn</a>
+      <a class="footer-link" href="https://github.com" target="_blank">GitHub</a>
+      <a class="footer-link" href="mailto:stephanie.onuoha.9@gmail.com">Email</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
