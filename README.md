@@ -5,17 +5,17 @@ MSc AI and Data Science, University of Hull · Business Analyst and UAT Tester
 
 ## Overview
 
-This project identifies, quantifies and prioritises AI automation opportunities across a fictional social care organisation — CareForward Group — using real operational knowledge from the care sector and original federated machine learning research.
+This project identifies, quantifies and prioritises AI automation opportunities across a fictional social care organisation. CareForward Group, using real operational knowledge from the care sector and original federated machine learning research.
 
 The work demonstrates a complete Business Analyst delivery cycle: discovery, current state process mapping, opportunity identification, business case production, BPMN process design, RACI governance, and executive communication.
 
 ## The Problem
 
-Support workers in residential care homes spend an estimated **40 to 72 hours per week** on manual administrative logging across a three-shift team. Staff dedicate 5 to 15 minutes every hour to device logging — time extracted directly from care delivery.
+Support workers in residential care homes spend an estimated **40 to 72 hours per week** on manual administrative logging across a three-shift team. Staff dedicate 5 to 15 minutes every hour to device logging, time extracted directly from care delivery.
 
 The most consistent staff feedback: *"more time logging than with people."*
 
-Medication records carry the highest error risk and trigger costly escalation chains when errors occur. Early health deterioration is detected informally through verbal observation — unstructured and lost between shift changes.
+Medication records carry the highest error risk and trigger costly escalation chains when errors occur. Early health deterioration is detected informally through verbal observation, unstructured and lost between shift changes.
 
 ## Research Foundation
 
@@ -33,7 +33,7 @@ All AI recommendations are grounded in original MSc dissertation research:
 | Low-confidence predictions | 0% across 21,871 classifications |
 | Robustness under 30% feature corruption | F1 greater than 0.90 maintained |
 
-The LogAE-XGBoost-SHAP federated architecture originally applied to DoS attack detection transfers directly to care log anomaly detection. The same mechanism — train on normal, flag high reconstruction error as anomaly — applies equally to network traffic and service user health baselines.
+The LogAE-XGBoost-SHAP federated architecture originally applied to DoS attack detection transfers directly to care log anomaly detection. The same mechanism: train on normal, flag high reconstruction error as anomaly, applies equally to network traffic and service user health baselines.
 
 ## Four AI Opportunities
 
@@ -62,7 +62,7 @@ All four opportunities are implemented using a federated learning architecture f
 |------|-------------|
 | `CareForward_CurrentState_Process.xlsx` | Current state process map, effort analysis, and stakeholder map |
 | `CareForward_AI_Opportunity_Assessment.xlsx` | AI opportunity assessment, prioritisation matrix, and dissertation-to-care mapping |
-| `CareForward_AI_Business_Case.docx` | Full business case document — 7 sections, board-ready |
+| `CareForward_AI_Business_Case.docx` | Full business case document: 7 sections, board-ready |
 | `CareForward_BPMN_and_RACI.xlsx` | BPMN current vs future state process map, RACI matrix, and governance principles |
 | `CareForward_Executive_Summary.html` | One-page visual executive summary |
 | `CareForward_Executive_Summary.docx` | Word version of executive summary |
@@ -74,7 +74,7 @@ All four opportunities are implemented using a federated learning architecture f
 Nine-step swimlane map covering all three daily shifts (07:00 to 14:30, 14:00 to 21:00, 21:00 to 07:00). Actors: Night Staff, Day Staff, Medication Lead, Senior Staff, Manager. Pain points quantified per step. Effort analysis: 40 to 72 hours per week lost to manual logging.
 
 ### AI Opportunity Assessment
-Four opportunities scored across six criteria: business value, staff impact, technical feasibility, compliance safety, speed to implement, and dissertation alignment. Includes a direct mapping of dissertation capabilities to care applications — showing exactly how LogAE anomaly detection, SHAP explainability, federated architecture, drift detection, and XGBoost classification transfer from cybersecurity to social care.
+Four opportunities scored across six criteria: business value, staff impact, technical feasibility, compliance safety, speed to implement, and dissertation alignment. Includes a direct mapping of dissertation capabilities to care applications, showing exactly how LogAE anomaly detection, SHAP explainability, federated architecture, drift detection, and XGBoost classification transfer from cybersecurity to social care.
 
 ### BPMN Process Map — Current vs Future State
 Side-by-side comparison of the manual process and the AI-enabled future state across 14 process steps and three decision gateways. Every future state activity shows the AI component (purple), the time saving (green), and the human accountability checkpoint preserved.
@@ -90,13 +90,13 @@ One-page board-ready summary with headline stats, four opportunity cards with di
 Every AI workflow in this proposal follows eight non-negotiable governance principles:
 
 1. Human accountability at every decision point
-2. SHAP explainability for every AI flag — auditable by CQC
-3. Federated data architecture — no individual health data leaves the care home
+2. SHAP explainability for every AI flag is auditable by CQC
+3. Federated data architecture based, no individual health data leaves the care home
 4. Named business owner for every AI workflow
 5. Drift detection and scheduled model review
 6. Staff override rights for all AI alerts
 7. Full audit trail of every AI action and human sign-off
-8. Incident learning loop — every AI-related issue reviewed within 48 hours
+8. Incident learning loop, every AI-related issue reviewed within 48 hours
 
 ## Skills Demonstrated
 
