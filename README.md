@@ -80,7 +80,7 @@ Four opportunities scored across six criteria: business value, staff impact, tec
 Side-by-side comparison of the manual process and the AI-enabled future state across 14 process steps and three decision gateways. Every future state activity shows the AI component (purple), the time saving (green), and the human accountability checkpoint preserved.
 
 ### RACI Matrix
-23 activities across 8 roles including a dedicated AI System column. Governance principle: no AI activity is final without human sign-off. Every medication and clinical decision has a human as Accountable — AI holds no A roles.
+23 activities across 8 roles including a dedicated AI System column. Governance principle: no AI activity is final without human sign-off. Every medication and clinical decision has a human as Accountable; AI holds no Accountablility roles.
 
 ### Executive Summary
 One-page board-ready summary with headline stats, four opportunity cards with dissertation metrics, ROI summary, and architecture recommendation. Designed for LinkedIn sharing and portfolio showcasing.
