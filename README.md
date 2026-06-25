@@ -7,7 +7,7 @@
 
 ## Overview
 
-This project identifies, quantifies and prioritises AI automation opportunities across a fictional social care organisation — CareForward Group — using real operational knowledge from the care sector and original federated machine learning research.
+This project identifies, quantifies and prioritises AI automation opportunities across a fictional social care organisation, CareForward Group using real operational knowledge from the care sector and original federated machine learning research.
 
 The work demonstrates a complete Business Analyst delivery cycle: discovery, current state process mapping, opportunity identification, business case production, BPMN process design, RACI governance, benefits realisation, change management, governance documentation, and AI agent design.
 
@@ -19,7 +19,7 @@ Support workers in residential care homes spend an estimated **40 to 72 hours pe
 
 The most consistent staff feedback: *"more time logging than with people."*
 
-Medication records carry the highest error risk and trigger costly escalation chains when errors occur. Early health deterioration is detected informally through verbal observation — unstructured and lost between shift changes.
+Medication records carry the highest error risk and trigger costly escalation chains when errors occur. Early health deterioration is detected informally through verbal observation unstructured and lost between shift changes.
 
 ---
 
