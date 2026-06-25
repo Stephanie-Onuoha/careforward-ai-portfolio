@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <mxCell id="title" value="HANDOVER SUMMARY AI AGENT, CareForward Group  |  BPMN 2.0  |  Author: Stephanie Onuoha  |  June 2026  |  github.com/Stephanie-Onuoha/careforward-ai-portfolio" style="text;html=1;strokeColor=none;fillColor=#E8F5EE;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#1E6B47;" vertex="1" parent="1">
+      <mxGeometry x="20" y="10" width="1620" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="L1" value="Support Worker
+(Outgoing Shift)" style="swimlane;startSize=150;horizontal=0;fontStyle=1;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="20" y="40" width="1620" height="165" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="S1" value="Shift
+Ends" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="L1">
+      <mxGeometry x="170" y="67" width="40" height="40" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T1" value="Confirm all shift logs
+are complete in care
+management system" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="L1">
+      <mxGeometry x="230" y="52" width="150" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="G1" value="All logs
+complete?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontStyle=1;" vertex="1" parent="L1">
+      <mxGeometry x="410" y="62" width="70" height="55" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T1b" value="Complete
+missing log
+entries" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="L1">
+      <mxGeometry x="390" y="130" width="110" height="55" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="N1a" value="Yes →" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#1E6B47;" vertex="1" parent="L1">
+      <mxGeometry x="490" y="82" width="40" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="N1b" value="No ↓" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#b85450;" vertex="1" parent="L1">
+      <mxGeometry x="418" y="122" width="40" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="L2" value="AI Handover Agent
+(Automated)" style="swimlane;startSize=150;horizontal=0;fontStyle=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+      <mxGeometry x="20" y="205" width="1620" height="165" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T2" value="Retrieve all shift logs
+from care management
+system (read-only)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="L2">
+      <mxGeometry x="540" y="220" width="160" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T3" value="Generate structured
+handover summary
+using NLP model" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="L2">
+      <mxGeometry x="730" y="220" width="160" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T4" value="Flag priority items
+using SHAP feature
+importance scores" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="L2">
+      <mxGeometry x="920" y="220" width="160" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T5" value="Deliver draft summary
+to Senior Staff
+review queue" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="L2">
+      <mxGeometry x="1110" y="220" width="160" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="N2" value="⚠ AI boundary: no clinical decisions. Output is advisory only. Human sign-off mandatory before use." style="text;html=1;strokeColor=none;fillColor=#FFF9E6;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#8A5A00;" vertex="1" parent="L2">
+      <mxGeometry x="540" y="295" width="730" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="L3" value="Senior Staff
+(Human Reviewer)" style="swimlane;startSize=150;horizontal=0;fontStyle=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+      <mxGeometry x="20" y="370" width="1620" height="165" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T6" value="Review AI-generated
+handover summary
+against shift logs" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="L3">
+      <mxGeometry x="1110" y="385" width="160" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="G2" value="Summary
+accurate?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontStyle=1;" vertex="1" parent="L3">
+      <mxGeometry x="1300" y="393" width="70" height="55" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T6b" value="Edit, annotate
+and return to
+AI Agent" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="L3">
+      <mxGeometry x="1280" y="460" width="110" height="55" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T7" value="Approve summary
+and apply digital
+signature" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="L3">
+      <mxGeometry x="1400" y="385" width="150" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="N3a" value="Yes →" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#1E6B47;" vertex="1" parent="L3">
+      <mxGeometry x="1377" y="408" width="40" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="N3b" value="No ↓" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#b85450;" vertex="1" parent="L3">
+      <mxGeometry x="1306" y="450" width="40" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="N3c" value="⚠ Audit trail: every AI action, human sign-off, and edit logged with timestamp and staff name for CQC inspection." style="text;html=1;strokeColor=none;fillColor=#E8F5EE;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#1E6B47;" vertex="1" parent="L3">
+      <mxGeometry x="1110" y="458" width="440" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="L4" value="Support Worker
+(Incoming Shift)" style="swimlane;startSize=150;horizontal=0;fontStyle=1;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+      <mxGeometry x="20" y="535" width="1620" height="165" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T8" value="Receive approved
+handover summary
+(read-only access)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="L4">
+      <mxGeometry x="1400" y="550" width="150" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="T9" value="Review priority
+items and
+acknowledge receipt" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="L4">
+      <mxGeometry x="1575" y="550" width="145" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="E1" value="Handover
+Complete" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontSize=9;" vertex="1" parent="L4">
+      <mxGeometry x="1745" y="563" width="44" height="44" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="S1" target="T1" parent="L1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="T1" target="G1" parent="L1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A3" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="G1" target="T1b" parent="L1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A3b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=9;" edge="1" source="T1b" target="T1" parent="L1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A4" value="Yes, trigger AI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;fontStyle=2;fontColor=#1E6B47;" edge="1" source="G1" target="T2" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="T2" target="T3" parent="L2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="T3" target="T4" parent="L2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="T4" target="T5" parent="L2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A8" value="Draft for review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=9;fontStyle=2;" edge="1" source="T5" target="T6" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="T6" target="G2" parent="L3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A10" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="G2" target="T6b" parent="L3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A10b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=9;fontColor=#b85450;" edge="1" source="T6b" target="T5" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A11" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;fontStyle=2;fontColor=#1E6B47;" edge="1" source="G2" target="T7" parent="L3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A12" value="Approved handover" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=9;fontStyle=2;fontColor=#1E6B47;" edge="1" source="T7" target="T8" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="T8" target="T9" parent="L4">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="A14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=9;" edge="1" source="T9" target="E1" parent="L4">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="LEG_TITLE" value="LEGEND" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="40" width="190" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="LEG1" value="Start Event" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="65" width="190" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="LEG2" value="Task (Human)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="95" width="190" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="LEG3" value="Task (AI Agent)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="125" width="190" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="LEG4" value="Task (Error path)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="155" width="190" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="LEG5" value="Decision Gateway" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="185" width="190" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="LEG6" value="End Event" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="215" width="190" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="ACCT" value="HUMAN ACCOUNTABILITY PRINCIPLE:
+No AI output is final without human sign-off.
+Every approved summary has a named reviewer.
+Full SHAP-explained audit trail for CQC." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EE;strokeColor=#82b366;fontSize=9;fontColor=#1E6B47;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1640" y="260" width="190" height="80" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
